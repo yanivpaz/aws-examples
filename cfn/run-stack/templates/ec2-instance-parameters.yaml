@@ -1,0 +1,18 @@
+[
+  {
+    "ParameterValue" : "$MY_SSH_KEY",
+    "ParameterKey": "KeyName"
+  },
+  {
+    "ParameterValue" : "$MY_NETWORK_CIDR",
+    "ParameterKey": "SSHLocation"
+  },
+  {
+    "ParameterValue" : "t2.micro",
+    "ParameterKey": "InstanceType"
+  },
+  {
+    "ParameterValue" : "$AMI_ID" ,
+    "ParameterKey": "AmiId"
+  }
+]
