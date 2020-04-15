@@ -9,9 +9,7 @@ see defaults in templates/ec2-instance-stack.yaml
 # stack execution parameters
 export VERSION_NUMBER=1
 export STACK_NAME=my-stack
-export ROLE_ARN=<role arn>
-# example arn:aws:iam::123456:role/my-role
-
+export ROLE_ARN=<role arn> # example arn:aws:iam::123456:role/my-role
 
 # stack input parametrs
 export MY_SSH_KEY=my-keypair
