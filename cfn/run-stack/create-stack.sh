@@ -27,8 +27,8 @@ export STACK_NAME=$2
 echo "STACK_DIR:$STACK_DIR . STACK_NAME:$STACK_NAME"
 if [ -z $STACK_NAME ]
 then
- export BUILD_NUMBER="${BUILD_NUMBER:-nobuildnum}"
- export STACK_NAME="${STACK_DIR}-${BUILD_NUMBER}"
+ export VERSION_NUMBER="${VERSION_NUMBER:-nobuildnum}"
+ export STACK_NAME="${STACK_DIR}-${VERSION_NUMBER}"
  echo "STACK_NAME not provided , using $STACK_NAME "
 fi 
 export STACK_TEMPLATE="${STACK_DIR}-stack.yaml"
@@ -44,7 +44,7 @@ echo "creating stack $STACK_NAME"
 aws cloudformation create-stack   --stack-name $STACK_NAME  \
 --template-body file://${STACK_DIR}/${STACK_TEMPLATE} \
 --parameters file://generated/${STACK_PARAMS}  \
---role-arn  arn:aws:iam::accounn:role/Qwilt-Cloudformation-ServiceRole 
+--role-arn  $ROLE_ARN 
 #--capabilities CAPABILITY_NAMED_IAM 
 CFN_STATUS=$?
 if [ $CFN_STATUS -ne 0 ]

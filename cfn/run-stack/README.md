@@ -1,16 +1,26 @@
 # CFN simple example
 
 Simple demo to create ec2 instance using CFN
+see defaults in templates/ec2-instance-stack.yaml
 
 ## Create the stack 
-
+### Define env vars 
 ```
-export AMI_ID=<ami id>
-export BUILD_NUMBER=
+# stack execution parameters
+export VERSION_NUMBER=1
 export STACK_NAME=my-stack
+export ROLE_ARN=<role arn>
+# example arn:aws:iam::123456:role/my-role
+
+
+# stack input parametrs
 export MY_SSH_KEY=my-keypair
 export MY_NETWORK_CID=10.11.12.13/30
+export AMI_ID=<ami id>
+```
 
+### Run the script
+```
 ./create-stack.sh  template
 ```	
 
