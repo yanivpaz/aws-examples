@@ -1,0 +1,3 @@
+sam init --runtime python3.6 
+cd sam-app
+sam build --use-container
